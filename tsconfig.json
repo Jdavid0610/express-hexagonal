@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Specify ECMAScript target version
+    "module": "commonjs", // Specify module code generation
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Enable compatibility with ES6 modules
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+    "rootDir": "./", // Specify the root directory of input files
+    "resolveJsonModule": true, // Include modules imported with .json extension
+    "baseUrl": "./", // Base directory to resolve non-relative module names
+    "paths": {
+      "@/*": ["src/*"],
+      "@routes/*": ["src/routes/*"]
+    }
+  },
+  "include": ["src/**/*.ts"], // Specify an array of glob patterns to include in the program
+  "exclude": ["node_modules", "dist"] // Specify an array of glob patterns to exclude from the program
+}
