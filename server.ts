@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import routes from "./src/routes/api";
+import swaggerDocs from "./swagger";
 require("dotenv").config();
 
 const app = express();
@@ -15,4 +16,5 @@ app.use("/api/", routes);
 
 app.listen(port, () => {
   console.log("Server running at http://localhost:" + port);
+  swaggerDocs(app, port);
 });
