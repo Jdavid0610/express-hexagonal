@@ -4,11 +4,10 @@ import { SequelizeRepository } from "../domain/contracts/sequelizeRepository";
 export class SequelizeBaseRepository<T extends Model>
   implements SequelizeRepository<T>
 {
-  //TODO: fix functions to get info from sequelize
-  protected baseModel: typeof Model;
+  protected baseModel: ModelCtor<T>;
   protected relations: string[];
 
-  constructor(model: typeof Model, relations: string[] = []) {
+  constructor(model: ModelCtor<T>, relations: string[] = []) {
     this.baseModel = model;
     this.relations = relations;
   }
@@ -57,7 +56,7 @@ export class SequelizeBaseRepository<T extends Model>
     return this.baseModel.findAll(queryOptions);
   }
 
-  async create(request: Record<string, any>): Promise<T> {
+  async create(request: T["_creationAttributes"]): Promise<T> {
     return this.baseModel.create(request);
   }
 

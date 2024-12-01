@@ -1,4 +1,4 @@
-import { BaseDTORepository } from "../baseDTORepository";
+import { BaseDTORepository } from "../BaseDTORepository";
 import { DtoFactoryRepository } from "../contracts/DTO/DTOFactoryRepository";
 import { DtoRepository } from "../contracts/DTO/DTORepository";
 import { EncapsulationRepository } from "../contracts/encapsulationRepository";

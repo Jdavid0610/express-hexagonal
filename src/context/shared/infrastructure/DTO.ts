@@ -14,9 +14,11 @@ class DTO implements EncapsulationRepository {
   }
 
   get(property?: string): any {
-    // TODO: solve error for encapsulation service at get method
+    // Convert property to an object if it's a string
+    const encapsulationData =
+      typeof property === "string" ? { property } : property || {};
     return this.mapper.generateEncapsulation(
-      new EncapsulationService(property || null),
+      new EncapsulationService(encapsulationData),
       "get"
     );
   }
